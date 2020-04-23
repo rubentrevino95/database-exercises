@@ -1,6 +1,5 @@
 USE employees;
-
-SELECT first_name, last_name, birth_date
+SELECT first_name, last_name
 FROM employees
 WHERE emp_no IN (
     SELECT emp_no
@@ -10,15 +9,7 @@ LIMIT 40;
 
 SELECT first_name, last_name, s.salary
 FROM employees
-JOIN salaries s on employees.emp_no = s.emp_no
+         JOIN salaries s ON employees.emp_no = s.emp_no
 WHERE s.salary > 55000
-AND s.to_date = '999-01-01'
-ORDER BY last_name;
-
--- 1
-SELECT first_name, last_name, hire_date
-FROM employees
-WHERE emp_no IN (
-
-)
-LIMIT 69;
+  AND s.to_date = '9999-01-01'
+ORDER BY s.salary DESC;

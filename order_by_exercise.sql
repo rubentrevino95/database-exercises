@@ -1,4 +1,8 @@
 USE employees;
+SELECT * FROM employees LIMIT 5 OFFSET 10;
+
+
+
 
 SELECT * FROM employees WHERE first_name IN ('Irena', 'Vidya', 'Maya') ORDER BY first_name;
 
